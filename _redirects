@@ -1,0 +1,29 @@
+# 301 redirects from the old Wix URLs.
+# Works on Cloudflare Pages and Netlify. Without this file, 20 of the 29
+# URLs Google currently has indexed for jessechance.com become 404s on
+# launch day, and their ranking history is lost.
+
+# --- Album pages -> the venue landing page for that same wedding ---
+# Same photos, same couple, but a keyword-rich URL. Preserves link equity
+# and upgrades the target in one hop.
+/recent-work-a    /anderson-point-elopement-photographer   301
+/recent-work-b    /riverbank-estate-wedding-photographer   301
+/recent-work-c    /olive-estate-wedding-photographer       301
+/recent-work-d    /mundaring-wedding-photographer          301
+
+# --- Pages whose content moved into an existing page ---
+/photobooths          /packages   301
+/sale                 /packages   301
+/services             /packages   301
+/bookingform          /contact    301
+/team-1               /about      301
+/projects-3           /recent-work 301
+
+# --- Dead Wix pages with no successor ---
+/resources             /   301
+/webinar-registration  /   301
+
+# --- Blog: DECISION PENDING ---
+# 11 posts from 2023 live at /post/<slug> and /blog.
+# Nothing here yet on purpose — blanket-redirecting them all to the
+# homepage is a soft-404 pattern Google penalises. See README.
