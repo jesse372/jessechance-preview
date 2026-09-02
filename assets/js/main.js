@@ -324,9 +324,9 @@
   var PACKAGES = {
     'bronze':         ['Photography · Bronze', '$799 · up to 1.5 hours'],
     'silver':         ['Photography · Silver', '$1,499 · up to 3 hours'],
-    'gold':           ['Photography · Gold', '$2,749 · up to 5 hours'],
+    'gold':           ['Photography · Gold', '$2,499 · up to 5 hours'],
     'diamond':        ['Photography · Diamond', '$3,499 · up to 9 hours'],
-    'video-gold':     ['Wedding Film · Gold', '$2,749 · up to 5 hours'],
+    'video-gold':     ['Wedding Film · Gold', '$2,499 · up to 5 hours'],
     'video-diamond':  ['Wedding Film · Diamond', '$3,499 · up to 9 hours'],
     'booth-bronze':   ['Photo Booth · Bronze', '$799 · 3 hours'],
     'booth-silver':   ['Photo Booth · Silver', '$899 · 4 hours'],
