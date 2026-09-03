@@ -39,6 +39,12 @@
    text was invisible, so the secondary CTA silently disappeared. */
 .lp-hero .btn--ghost{color:var(--cream);border-color:rgba(251,248,244,.55)}
 .lp-hero .btn--ghost:hover{background:rgba(251,248,244,.12);border-color:var(--cream)}
+.lp-feature{background:var(--bone);padding:clamp(1.6rem,4vw,3rem);border:1px solid var(--line)}
+.lp-feature .now-big{font-family:var(--display);font-size:clamp(2.4rem,8vw,3.6rem);line-height:1}
+.lp-feature-list{list-style:none;padding:0;margin:0;display:grid;gap:.5rem}
+.lp-feature-list li{position:relative;padding-left:1.4rem;color:var(--muted)}
+.lp-feature-list li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;
+  border-radius:50%;background:var(--rose-deep)}
 .lp-form{background:var(--bone);border-radius:var(--radius,4px);padding:clamp(1.5rem,4vw,2.6rem)}
 .lp-form .field{margin-bottom:1rem}
 .lp-form label{display:block;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.4rem;color:var(--muted)}
@@ -144,43 +150,65 @@
 
 
 
+<section class="section" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="lp-feature">
+      <div class="lp-feature-copy">
+        <p class="eyebrow">Most booked</p>
+        <h2 class="h2">Gold<br><span class="italic">save $1,500</span></h2>
+        <div class="lp-price" style="margin:1.2rem 0 .6rem">
+          <span class="now-big">$2,499</span>
+          <span class="was">$3,999</span>
+        </div>
+        <p class="tier-hours" style="margin-bottom:1.2rem">Up to 5 hours of coverage</p>
+        <ul class="lp-feature-list"><li>May include bridal prep, ceremony, reception &amp; group photos</li><li>Unlimited selected images in high resolution</li><li>Low-resolution copies for socials</li><li>Meeting to discuss your wedding plan</li><li>Digital editing on all images</li><li>Free 1 year cloud storage</li></ul>
+        <div class="btn-row" style="margin-top:1.8rem"><a class="btn" href="#enquire">Check your date</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section bone-sec">
   <div class="wrap-wide">
     <div class="sec-head reveal"><div>
       <p class="eyebrow">What it costs</p>
-      <h2 class="h2">Every collection includes<br><span class="italic">unlimited images</span></h2>
+      <h2 class="h2">Every collection<br><span class="italic">is on sale</span></h2>
     </div></div>
     <div class="tiers">
         <div class="tier">
+          
           <p class="tier-name">Bronze</p>
           <div class="tier-price"><span class="now">$799</span><span class="was">$1,299</span></div>
           <p class="tier-save">Save $500</p>
-          <p class="tier-hours">Up to 3 hours</p>
-          <ul><li>One photographer</li><li>Unlimited images, hand-edited</li><li>Online gallery</li><li>1 year cloud storage</li></ul>
+          <p class="tier-hours">Up to 1.5 hours of coverage</p>
+          <ul><li>Ceremony &amp; group photos</li><li>Unlimited selected images in high resolution</li><li>Digital editing on all images</li><li>Free 1 year cloud storage</li></ul>
         </div>
         <div class="tier">
+          
           <p class="tier-name">Silver</p>
           <div class="tier-price"><span class="now">$1,499</span><span class="was">$2,499</span></div>
           <p class="tier-save">Save $1,000</p>
-          <p class="tier-hours">Up to 4 hours</p>
-          <ul><li>Bridal prep, ceremony &amp; portraits</li><li>Unlimited images, hand-edited</li><li>Low-res copies for socials</li><li>1 year cloud storage</li></ul>
+          <p class="tier-hours">Up to 3 hours of coverage</p>
+          <ul><li>Ceremony &amp; group photos</li><li>Unlimited selected images in high resolution</li><li>Digital editing on all images</li><li>Free 1 year cloud storage</li></ul>
         </div>
-        <div class="tier">
+        <div class="tier tier--feature">
+          <span class="tier-badge">Most booked</span>
           <p class="tier-name">Gold</p>
           <div class="tier-price"><span class="now">$2,499</span><span class="was">$3,999</span></div>
           <p class="tier-save">Save $1,500</p>
-          <p class="tier-hours">Up to 5 hours</p>
-          <ul><li>Prep, ceremony, reception &amp; groups</li><li>Unlimited images, hand-edited</li><li>Low-res copies for socials</li><li>1 year cloud storage</li></ul>
+          <p class="tier-hours">Up to 5 hours of coverage</p>
+          <ul><li>May include bridal prep, ceremony, reception &amp; group photos</li><li>Unlimited selected images in high resolution</li><li>Low-resolution copies for socials</li><li>Meeting to discuss your wedding plan</li><li>Digital editing on all images</li><li>Free 1 year cloud storage</li></ul>
         </div>
         <div class="tier">
+          
           <p class="tier-name">Diamond</p>
           <div class="tier-price"><span class="now">$3,499</span><span class="was">$5,499</span></div>
           <p class="tier-save">Save $2,000</p>
-          <p class="tier-hours">Up to 9 hours</p>
-          <ul><li>Full day, start to last dance</li><li>Unlimited images, hand-edited</li><li>Second photographer</li><li>1 year cloud storage</li></ul>
+          <p class="tier-hours">Up to 9 hours of coverage</p>
+          <ul><li>Full day — bridal prep, ceremony, reception &amp; group photos</li><li>Unlimited selected images in high resolution</li><li>Low-resolution copies for socials</li><li>Meeting to discuss your wedding plan</li><li>Digital editing on all images</li><li>Free 1 year cloud storage</li></ul>
         </div>
     </div>
-    <p class="form-note" style="margin-top:2rem;text-align:center">Sale prices shown. Photography collections &mdash; film and photo booth available too.</p>
+    <p class="form-note" style="margin-top:2rem;text-align:center">Every photography collection is discounted while the sale is on. Wedding film and photo booth are available too &mdash; ask when you enquire.</p>
     <div class="btn-row" style="justify-content:center;margin-top:1.6rem"><a class="btn" href="#enquire">Check your date</a></div>
   </div>
 </section>
