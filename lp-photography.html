@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Paid-traffic landing page: must never be indexed or it competes with the
+     venue pages for the same couples. -->
+<meta name="robots" content="noindex, nofollow">
+<title>Perth Wedding Photography from $799 | Jesse Chance</title>
+<meta name="description" content="Perth wedding photography from $799. Unlimited hand-edited images, eight photographers, delivered in 6-8 weeks. Check your date - we reply within 24 hours.">
+<link rel="preload" as="image" href="assets/albums/jade-kyle/19.webp" fetchpriority="high">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta name="theme-color" content="#0e0b09">
+<!-- TODO: Meta Pixel not configured. Set PIXEL_ID in tools/gen_landing.py.
+     Without it Meta cannot optimise for enquiries and you are buying clicks blind. -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is $799 a real price?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. It is the Bronze collection at its current sale price, down from $1,299, and it includes unlimited hand-edited images with no per-image charges. There is no bait here - the same prices are on our main site. What changes between collections is hours of coverage, not whether you get your photos."}}, {"@type": "Question", "name": "What does \"unlimited images\" actually mean?", "acceptedAnswer": {"@type": "Answer", "text": "Every frame worth keeping, edited by hand, delivered in high resolution. No cap on your gallery and no charge per image. A lot of photographers deliver fifty pictures and sell you the rest - we do not."}}, {"@type": "Question", "name": "How quickly do we get them?", "acceptedAnswer": {"@type": "Answer", "text": "Six to eight weeks, with a full year of cloud storage included."}}, {"@type": "Question", "name": "What if it rains?", "acceptedAnswer": {"@type": "Answer", "text": "It has rained on plenty of our weddings and the photos were still good - one of the reviews above is literally about it. Overcast light is softer on faces than hard summer sun. We plan a wet-weather option with you beforehand so nobody is improvising on the day."}}, {"@type": "Question", "name": "What if you are already booked, or someone gets sick?", "acceptedAnswer": {"@type": "Answer", "text": "There are eight photographers on the team, so your date is rarely a problem, and if someone falls ill the week of your wedding there is a professional ready to step in. Most photographers cannot say that."}}, {"@type": "Question", "name": "What happens after we enquire?", "acceptedAnswer": {"@type": "Answer", "text": "We reply within 24 hours and tell you straight away whether we are free. No pressure and no sales pitch - if we are not the right fit we will say so."}}]}</script>
+<style>
+/* Landing-page-only tweaks. Everything else is inherited from style.css so the
+   page cannot drift from the brand. */
+.lp-head{position:absolute;top:0;left:0;right:0;z-index:5;padding:1.4rem 0}
+.lp-head .wrap-wide{display:flex;align-items:center;justify-content:space-between}
+.lp-head .brand-txt,.lp-head .brand-mark{color:var(--cream)}
+.lp-phone{color:var(--cream);font-size:.95rem;letter-spacing:.04em}
+.lp-hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:var(--cream);overflow:hidden}
+.lp-hero-media{position:absolute;inset:0;z-index:-2}
+.lp-hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.lp-hero::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(14,11,9,.55) 0%,rgba(14,11,9,.25) 35%,rgba(14,11,9,.88) 100%)}
+.lp-hero-inner{width:100%;padding-block:6rem 3rem}
+.lp-price{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap;margin:1rem 0 .9rem}
+.lp-price .save{font-size:.9rem;letter-spacing:.06em;text-transform:uppercase;color:var(--cream)}
+.lp-price .was{text-decoration:line-through;opacity:.65;font-size:1.15rem}
+.lp-chips{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.6rem;padding:0;list-style:none}
+.lp-chips li{border:1px solid rgba(251,248,244,.32);border-radius:2rem;padding:.4rem .85rem;font-size:.78rem;white-space:nowrap}
+.lp-cta-row{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:2rem}
+/* .btn--ghost is built for light backgrounds - on the dark hero its near-black
+   text was invisible, so the secondary CTA silently disappeared. */
+.lp-hero .btn--ghost{color:var(--cream);border-color:rgba(251,248,244,.55)}
+.lp-hero .btn--ghost:hover{background:rgba(251,248,244,.12);border-color:var(--cream)}
+.lp-form{background:var(--bone);border-radius:var(--radius,4px);padding:clamp(1.5rem,4vw,2.6rem)}
+.lp-form .field{margin-bottom:1rem}
+.lp-form label{display:block;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.4rem;color:var(--muted)}
+.lp-form input{width:100%;padding:.95rem 1rem;border:1px solid var(--line);background:var(--cream);font:inherit;border-radius:2px}
+.lp-form input:focus{outline:2px solid var(--rose-deep);outline-offset:1px}
+.lp-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:2px}
+.lp-strip figure{margin:0}   /* browsers default <figure> to 1em 40px */
+.lp-strip img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5;display:block}
+.lp-sticky{position:fixed;left:0;right:0;bottom:0;z-index:40;display:none;
+  grid-template-columns:1fr 1fr;background:var(--ink,#0e0b09)}
+.lp-sticky a{padding:1.05rem .5rem;text-align:center;color:var(--cream);font-size:.9rem;letter-spacing:.06em}
+.lp-sticky a+a{border-left:1px solid rgba(251,248,244,.2)}
+.lp-ok{display:none;background:var(--bone);padding:2rem;text-align:center}
+@media(max-width:760px){
+  .lp-strip{grid-template-columns:repeat(2,1fr)}
+  .lp-sticky{display:grid}
+  footer{padding-bottom:4.6rem}
+  /* the sticky bar overlaps the hero CTAs otherwise */
+  .lp-hero-inner{padding-bottom:5.5rem}
+  .lp-hero{min-height:100svh}
+  .lp-hide-sm{display:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#enquire">Skip to the enquiry form</a>
+
+<header class="lp-head">
+  <div class="wrap-wide">
+    <span class="brand"><span class="brand-mark" aria-hidden="true">JC</span>
+      <span class="brand-txt">Jesse Chance<small>Perth &middot; WA</small></span></span>
+    <a class="lp-phone" href="tel:+61448665690">0448 665 690</a>
+  </div>
+</header>
+
+<main id="main">
+<section class="lp-hero">
+  <div class="lp-hero-media"><img src="assets/albums/jade-kyle/19.webp" srcset="assets/albums/jade-kyle/19.webp 2000w, assets/albums/jade-kyle/19-2560.webp 2560w" sizes="100vw" alt="A couple photographed among the vines at golden hour in the Swan Valley" width="2000" height="1333" fetchpriority="high"></div>
+  <div class="wrap lp-hero-inner">
+    <p class="eyebrow" style="color:rgba(251,248,244,.85)">Perth &amp; Western Australia</p>
+    <h1 class="h1">Perth wedding photography<br><span class="italic">from $799</span></h1>
+    <div class="lp-price"><span class="was">$1,299</span><span class="save">Save $500 &mdash; sale on now</span></div>
+    <p style="max-width:44ch;color:rgba(251,248,244,.9)">Unlimited images, hand-edited, delivered in six to eight weeks. No per-image charges, ever.</p>
+    <ul class="lp-chips">
+      <li>12 years</li>
+      <li>8 photographers</li>
+      <li>Unlimited images</li>
+      <li>Reply in 24 hrs</li>
+    </ul>
+    <div class="lp-cta-row">
+      <a class="btn btn--light" href="#enquire">Check your date</a>
+      <a class="btn btn--ghost lp-hide-sm" href="tel:+61448665690" data-call>Call 0448 665 690</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="sec-head reveal"><div>
+      <p class="eyebrow">Recent weddings</p>
+      <h2 class="h2">This is what<br><span class="italic">$799 buys you</span></h2>
+    </div></div>
+  </div>
+</section>
+<section style="padding-block:0 clamp(3rem,7vw,5rem)"><div class="lp-strip">
+      <figure><img src="assets/thumbs/shona-saif/466.webp" srcset="assets/thumbs/shona-saif/466.webp 427w, assets/thumbs/shona-saif/466-1280.webp 853w, assets/albums/shona-saif/466.webp 1333w" sizes="(max-width:760px) 90vw, 30vw" alt="Bride and groom kissing in a limestone archway" width="427" height="640" loading="lazy"></figure>
+      <figure><img src="assets/thumbs/nat-shanni/0043.webp" srcset="assets/thumbs/nat-shanni/0043.webp 640w, assets/thumbs/nat-shanni/0043-1280.webp 1280w, assets/albums/nat-shanni/0043.webp 1600w" sizes="(max-width:760px) 90vw, 30vw" alt="Two brides kissing beneath a tree avenue at golden hour" width="640" height="427" loading="lazy"></figure>
+      <figure><img src="assets/thumbs/jade-kyle/13.webp" srcset="assets/thumbs/jade-kyle/13.webp 427w, assets/thumbs/jade-kyle/13-1280.webp 853w, assets/albums/jade-kyle/13.webp 1333w" sizes="(max-width:760px) 90vw, 30vw" alt="Couple in the vines at Riverbank Estate" width="427" height="640" loading="lazy"></figure>
+      <figure><img src="assets/thumbs/shona-saif/296.webp" srcset="assets/thumbs/shona-saif/296.webp 427w, assets/thumbs/shona-saif/296-1280.webp 853w, assets/albums/shona-saif/296.webp 1333w" sizes="(max-width:760px) 90vw, 30vw" alt="A kiss beneath a blossom tree" width="427" height="640" loading="lazy"></figure>
+      <figure><img src="assets/thumbs/nyomi-kortnee/0476.webp" srcset="assets/thumbs/nyomi-kortnee/0476.webp 427w, assets/thumbs/nyomi-kortnee/0476-1280.webp 853w, assets/albums/nyomi-kortnee/0476.webp 1333w" sizes="(max-width:760px) 90vw, 30vw" alt="Two brides walking a tree-lined avenue" width="427" height="640" loading="lazy"></figure>
+      <figure><img src="assets/thumbs/melissa-gavin/14.webp" srcset="assets/thumbs/melissa-gavin/14.webp 426w, assets/thumbs/melissa-gavin/14-1280.webp 853w, assets/albums/melissa-gavin/14.webp 1066w" sizes="(max-width:760px) 90vw, 30vw" alt="Couple among white roses in the Perth Hills" width="426" height="640" loading="lazy"></figure>
+</div></section>
+
+<section class="section" id="enquire">
+  <div class="wrap">
+    <div class="sec-head reveal"><div>
+      <p class="eyebrow">Two minutes</p>
+      <h2 class="h2">Check your date<br><span class="italic">we&rsquo;ll reply within 24 hours</span></h2>
+    </div></div>
+    <div class="lp-form">
+      <form id="lpForm" novalidate>
+        <div class="field"><label for="f-name">Your name</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="f-date">Wedding date <span style="text-transform:none;letter-spacing:0">(or roughly when)</span></label>
+          <input id="f-date" name="date" type="text" placeholder="e.g. March 2027, or not sure yet" required></div>
+        <div class="field"><label for="f-venue">Venue or suburb <span style="text-transform:none;letter-spacing:0">(optional)</span></label>
+          <input id="f-venue" name="venue" type="text" autocomplete="off"></div>
+        <div class="field"><label for="f-email">Email</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="f-phone">Phone</label>
+          <input id="f-phone" name="phone" type="tel" autocomplete="tel" required></div>
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+        <button class="btn" type="submit" style="width:100%">Check my date</button>
+        <p class="form-note" id="lpNote" style="margin-top:1rem">No obligation. We&rsquo;ll tell you straight away if we&rsquo;re free &mdash; and if we&rsquo;re not the right fit, we&rsquo;ll say so.</p>
+      </form>
+      <div class="lp-ok" id="lpOk">
+        <h3 class="h3">Thanks &mdash; that&rsquo;s with us.</h3>
+        <p>We&rsquo;ll come back to you within 24 hours. If it&rsquo;s urgent, call <a href="tel:+61448665690">0448 665 690</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section bone-sec">
+  <div class="wrap-wide">
+    <div class="sec-head reveal"><div>
+      <p class="eyebrow">What it costs</p>
+      <h2 class="h2">Every collection includes<br><span class="italic">unlimited images</span></h2>
+    </div></div>
+    <div class="tiers">
+        <div class="tier">
+          <p class="tier-name">Bronze</p>
+          <div class="tier-price"><span class="now">$799</span><span class="was">$1,299</span></div>
+          <p class="tier-save">Save $500</p>
+          <p class="tier-hours">Up to 3 hours</p>
+          <ul><li>One photographer</li><li>Unlimited images, hand-edited</li><li>Online gallery</li><li>1 year cloud storage</li></ul>
+        </div>
+        <div class="tier">
+          <p class="tier-name">Silver</p>
+          <div class="tier-price"><span class="now">$1,499</span><span class="was">$2,499</span></div>
+          <p class="tier-save">Save $1,000</p>
+          <p class="tier-hours">Up to 4 hours</p>
+          <ul><li>Bridal prep, ceremony &amp; portraits</li><li>Unlimited images, hand-edited</li><li>Low-res copies for socials</li><li>1 year cloud storage</li></ul>
+        </div>
+        <div class="tier">
+          <p class="tier-name">Gold</p>
+          <div class="tier-price"><span class="now">$2,499</span><span class="was">$3,999</span></div>
+          <p class="tier-save">Save $1,500</p>
+          <p class="tier-hours">Up to 5 hours</p>
+          <ul><li>Prep, ceremony, reception &amp; groups</li><li>Unlimited images, hand-edited</li><li>Low-res copies for socials</li><li>1 year cloud storage</li></ul>
+        </div>
+        <div class="tier">
+          <p class="tier-name">Diamond</p>
+          <div class="tier-price"><span class="now">$3,499</span><span class="was">$5,499</span></div>
+          <p class="tier-save">Save $2,000</p>
+          <p class="tier-hours">Up to 9 hours</p>
+          <ul><li>Full day, start to last dance</li><li>Unlimited images, hand-edited</li><li>Second photographer</li><li>1 year cloud storage</li></ul>
+        </div>
+    </div>
+    <p class="form-note" style="margin-top:2rem;text-align:center">Sale prices shown. Photography collections &mdash; film and photo booth available too.</p>
+    <div class="btn-row" style="justify-content:center;margin-top:1.6rem"><a class="btn" href="#enquire">Check your date</a></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap-wide">
+    <div class="sec-head reveal"><div>
+      <p class="eyebrow">Real couples</p>
+      <h2 class="h2">What they said<br><span class="italic">afterwards</span></h2>
+    </div></div>
+    <div class="tgrid">
+        <figure class="tcard"><blockquote><p>&ldquo;From our first consultation, Jesse was extremely friendly, reliable &amp; helpful. On the day he was there, keeping us relaxed as he stood in the pouring rain taking our photos.&rdquo;</p></blockquote><figcaption class="n">Mikaela Edwards</figcaption></figure>
+        <figure class="tcard"><blockquote><p>&ldquo;He captured our moments perfectly and all we had to do was enjoy our day! Would highly recommend Jesse.&rdquo;</p></blockquote><figcaption class="n">Nikki Moore</figcaption></figure>
+        <figure class="tcard"><blockquote><p>&ldquo;We couldn&rsquo;t have asked for better photos that captured all the special moments of our day &mdash; from getting ready, to grooving the night away!&rdquo;</p></blockquote><figcaption class="n">Natalie Delanotte</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="section bone-sec">
+  <div class="wrap">
+    <div class="sec-head reveal"><div>
+      <p class="eyebrow">Before you ask</p>
+      <h2 class="h2">The honest<br><span class="italic">answers</span></h2>
+    </div></div>
+    <div class="faq reveal">
+      <details><summary>Is $799 a real price?</summary><div class="faq-body">Yes. It is the Bronze collection at its current sale price, down from $1,299, and it includes unlimited hand-edited images with no per-image charges. There is no bait here &mdash; the same prices are on our main site. What changes between collections is hours of coverage, not whether you get your photos.</div></details>
+      <details><summary>What does &ldquo;unlimited images&rdquo; actually mean?</summary><div class="faq-body">Every frame worth keeping, edited by hand, delivered in high resolution. No cap on your gallery and no charge per image. A lot of photographers deliver fifty pictures and sell you the rest &mdash; we do not.</div></details>
+      <details><summary>How quickly do we get them?</summary><div class="faq-body">Six to eight weeks, with a full year of cloud storage included.</div></details>
+      <details><summary>What if it rains?</summary><div class="faq-body">It has rained on plenty of our weddings and the photos were still good &mdash; one of the reviews above is literally about it. Overcast light is softer on faces than hard summer sun. We plan a wet-weather option with you beforehand so nobody is improvising on the day.</div></details>
+      <details><summary>What if you are already booked, or someone gets sick?</summary><div class="faq-body">There are eight photographers on the team, so your date is rarely a problem, and if someone falls ill the week of your wedding there is a professional ready to step in. Most photographers cannot say that.</div></details>
+      <details><summary>What happens after we enquire?</summary><div class="faq-body">We reply within 24 hours and tell you straight away whether we are free. No pressure and no sales pitch &mdash; if we are not the right fit we will say so.</div></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="bg"><img src="assets/img/cta.webp" alt="" width="1600" height="1066" loading="lazy"></div>
+  <div class="wrap inner">
+    <h2 class="h1">Is your date <span class="italic">still free?</span></h2>
+    <p>Tell us when and where. We&rsquo;ll come back within 24 hours &mdash; no pressure, no sales pitch.</p>
+    <div class="btn-row"><a class="btn btn--light" href="#enquire">Check your date</a></div>
+  </div>
+</section>
+</main>
+
+<footer style="background:var(--ink,#0e0b09);color:rgba(251,248,244,.7);padding:2.5rem 0;text-align:center;font-size:.86rem">
+  <div class="wrap">
+    <p>Jesse Chance Wedding Photographers &middot; Perth, Western Australia</p>
+    <p style="margin-top:.5rem"><a href="tel:+61448665690" style="color:inherit">0448 665 690</a> &middot;
+       <a href="mailto:jesse@jessechance.com" style="color:inherit">jesse@jessechance.com</a></p>
+  </div>
+</footer>
+
+<nav class="lp-sticky" aria-label="Quick actions">
+  <a href="#enquire">Check your date</a>
+  <a href="tel:+61448665690" data-call>Call us</a>
+</nav>
+
+<script>
+(function(){
+  var ENDPOINT = "";
+  var form = document.getElementById('lpForm');
+  var note = document.getElementById('lpNote');
+  var ok   = document.getElementById('lpOk');
+
+  function lead(){ if (window.fbq) fbq('track','Lead'); }
+
+  // A tap-to-call is a conversion too - Meta cannot see it otherwise.
+  document.querySelectorAll('[data-call]').forEach(function(a){
+    a.addEventListener('click', function(){ if(window.fbq) fbq('track','Contact'); });
+  });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    if (form._gotcha.value) return;              // bot
+    var d = {};
+    new FormData(form).forEach(function(v,k){ if(k!=='_gotcha') d[k]=v; });
+    var btn = form.querySelector('button[type=submit]');
+    btn.disabled = true; btn.textContent = 'Sending...';
+
+    function done(){ lead(); form.style.display='none'; ok.style.display='block';
+                     ok.scrollIntoView({block:'center',behavior:'smooth'}); }
+
+    if (ENDPOINT) {
+      fetch(ENDPOINT, {method:'POST', headers:{'Content-Type':'application/json',
+        'Accept':'application/json'}, body: JSON.stringify(d)})
+        .then(function(r){ if(!r.ok) throw 0; done(); })
+        .catch(function(){
+          btn.disabled=false; btn.textContent='Check my date';
+          note.textContent = 'That did not send. Please call ' + "0448 665 690" + ' and we will sort it out.';
+        });
+    } else {
+      // No endpoint configured yet: still capture the lead by opening a
+      // pre-filled email, and still fire the Pixel event.
+      var body = Object.keys(d).map(function(k){ return k + ': ' + d[k]; }).join('\n');
+      window.location.href = 'mailto:jesse@jessechance.com?subject=' +
+        encodeURIComponent('Wedding enquiry - ' + (d.name||'')) +
+        '&body=' + encodeURIComponent(body);
+      done();
+    }
+  });
+})();
+</script>
+</body>
+</html>
